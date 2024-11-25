@@ -1,0 +1,106 @@
+/* Ice Theme */
+
+
+#theme-selector-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: to make it stand out */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10; /* Ensure it's on top of other elements */
+}
+
+/* Styling for the select dropdown */
+#theme-select {
+    font-size: 14px;
+    padding: 5px;
+}
+.ice-theme {
+    --white-square-color: #aeeeee; /* Light blue for white squares */
+    --black-square-color: #56c1c7; /* Aqua green for black squares */
+    --board-border-color: #00a9b7; /* Cool blue for the border */
+    --board-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Soft cyan shadow */
+}
+
+/* Fire Theme */
+.fire-theme {
+    --white-square-color: #ffdf80; /* Light yellow for white squares */
+    --black-square-color: #f55b5b; /* Red for black squares */
+    --board-border-color: #d13a3a; /* Dark red border */
+    --board-shadow: 0 0 30px rgba(255, 69, 0, 0.7); /* Intense orange-red shadow */
+}
+
+/* Green Theme */
+.green-theme {
+    --white-square-color: #b7e7a7; /* Soft green for white squares */
+    --black-square-color: #478f47; /* Dark green for black squares */
+    --board-border-color: #4c914c; /* Earthy green border */
+    --board-shadow: 0 0 20px rgba(0, 128, 0, 0.5); /* Green shadow */
+}
+
+/* Blue Theme */
+.blue-theme {
+    --white-square-color: #9ac9e2; /* Light blue for white squares */
+    --black-square-color: #005f6b; /* Dark blue for black squares */
+    --board-border-color: #006a8e; /* Dark ocean blue border */
+    --board-shadow: 0 0 30px rgba(0, 0, 255, 0.7); /* Blue shadow */
+}
+
+body {
+    background-color: #312e2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Chess board styles using CSS variables */
+.chess-board {
+    width: 560px;
+    height: 560px;
+    border: 15px solid var(--board-border-color);
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: repeat(8, 70px);
+    grid-template-rows: repeat(8, 70px);
+    box-shadow: var(--board-shadow);
+}
+
+.square {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.white {
+    background-color: var(--white-square-color);
+}
+
+.black {
+    background-color: var(--black-square-color);
+}
+
+.selected {
+    background-color: #baca44;
+}
+
+.piece {
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piece:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
